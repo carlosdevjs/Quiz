@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+.popup-wrapper {
+    position: fixed;
+    scroll-behavior: smooth;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 100%;  
+}
+
+.popup {
+    position: relative;
+    font-family: arial;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 10% auto;
+    padding: 10px;
+    background: rgba(251, 251, 251)
+}
+
+.popup-closed {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.result {
+    position: relative;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: rgb(2, 3, 3);
+}
+/* 
+.popup-link {
+    color: white;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-decoration: none;
+} */
