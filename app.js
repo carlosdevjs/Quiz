@@ -9,9 +9,9 @@ const getUserAnswers = () => correctAnswers.map((_, index) => form[`inputQuestio
 
 const calculaterUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index) => {
-        const isResultResponseUser = userAnswer === correctAnswers[index]
+        const isAnsWerCorrect = userAnswer === correctAnswers[index]
 
-        if (isResultResponseUser) {
+        if (isAnsWerCorrect) {
             score += 25
         }
     })
@@ -47,16 +47,16 @@ const updateQuiz = event => {
     animationResultFinale()
 }
 
-const endClosedPopup = event => {
+const closedPopup = event => {
     const CSSClassName = event.target.classList[0]
-    const listNames = ['popup-closed', 'popup-wrapper', 'popup-link']
-    const closedPopup = listNames.some(listName => listName === CSSClassName)
+    const CSSClasses = ['popup-closed', 'popup-wrapper', 'popup-link']
+    const shoulClosedPopup = CSSClasses.some(CSSClass => CSSClass === CSSClassName)
 
-    if (closedPopup) {
+    if (shoulClosedPopup) {
         popup.classList.add('d-none')
         score = 0
     }
 }
 
 form.addEventListener('submit', updateQuiz)
-popup.addEventListener('click', endClosedPopup)
+popup.addEventListener('click', closedPopup)
